@@ -1,0 +1,36 @@
+---
+import Button from "./button.astro";
+
+const navLinks = [
+  {
+    text: "Home",
+    href: "/",
+  },
+  {
+    text: "About us",
+    href: "/about-us",
+  },
+  {
+    text: "Services",
+    href: "/services",
+  },
+  {
+    text: "Contact us",
+    href: "/contact-us",
+  },
+];
+---
+
+<header class="wrapper flex justify-between items-center py-8">
+  <h1>Logo</h1>
+  <nav class="space-x-4">
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="hover:text-primary duration-200">
+          {link.text}
+        </a>
+      ))
+    }
+  </nav>
+  <Button>Sign up</Button>
+</header>
