@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  bubbleColor: string;
+}
+
+const { title, description, bubbleColor } = Astro.props;
+---
+
+<article
+  class="bg-card relative border border-border p-4 rounded-md max-w-72 overflow-hidden"
+>
+  <div class={`${bubbleColor} absolute -top-2 -left-2 rounded-xl size-10`}>
+  </div>
+  <h3 class="text-lg font-semibold ml-6">{title}</h3>
+  <p class="text-card-foreground text-sm">
+    {description}
+  </p>
+</article>
