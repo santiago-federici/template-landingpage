@@ -1,27 +1,32 @@
 ---
+import { RevealFromLeft } from "./animations/reveal-from-left";
+import { RevealFromRight } from "./animations/reveal-from-right";
+
 import Button from "./button.astro";
 ---
 
 <section class="wrapper flex justify-between items-center my-20">
-  <div class="space-y-4 max-w-[50ch]">
-    <h2 class="font-bold text-4xl">
-      Our <span class="text-primary">Agency</span>
-    </h2>
-    <p class="text-muted-foreground">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam ad
-      perspiciatis molestias consequatur, at saepe illum necessitatibus fuga
-      facere ea incidunt ducimus deleniti aliquam ab blanditiis labore earum
-      atque voluptas.
-    </p>
+  <RevealFromLeft client:load>
+    <div class="space-y-4 max-w-[50ch]">
+      <h2 class="font-bold text-4xl">
+        Our <span class="text-primary">Agency</span>
+      </h2>
+      <p class="text-muted-foreground">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam ad
+        perspiciatis molestias consequatur, at saepe illum necessitatibus fuga
+        facere ea incidunt ducimus deleniti aliquam ab blanditiis labore earum
+        atque voluptas.
+      </p>
 
-    <Button>Read more</Button>
-  </div>
+      <Button>Read more</Button>
+    </div>
+  </RevealFromLeft>
 
-  <div class="w-1/2 flex justify-end">
+  <RevealFromRight client:load className="w-1/2 flex justify-end">
     <img
       src="/public/illustrations/about-us-illustration.svg"
       alt="illustration"
       class="object-contain w-2/3"
     />
-  </div>
+  </RevealFromRight>
 </section>
