@@ -1,4 +1,6 @@
 ---
+import { RevealFromBottom } from "./animations/reveal-from-bottom";
+
 import ServiceCard from "./service-card.astro";
 import LoaderPinwheelIcon from "../icons/loader-pinwheel.astro";
 import TabletSmartphoneIcon from "../icons/tablet-smartphone.astro";
@@ -12,6 +14,7 @@ const services = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-purple-500",
+    delay: 0.6,
     icon: LoaderPinwheelIcon,
   },
   {
@@ -19,6 +22,7 @@ const services = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-red-500",
+    delay: 0.7,
     icon: TabletSmartphoneIcon,
   },
   {
@@ -26,6 +30,7 @@ const services = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-yellow-500",
+    delay: 0.8,
     icon: HeadsetIcon,
   },
   {
@@ -33,6 +38,7 @@ const services = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-green-500",
+    delay: 0.9,
     icon: AccesibilityIcon,
   },
   {
@@ -40,32 +46,37 @@ const services = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-blue-500",
+    delay: 1,
     icon: BluetoothIcon,
   },
 ];
 ---
 
 <section class="wrapper my-20 flex flex-col items-center gap-6">
-  <div class="text-center space-y-1">
-    <h2 class="text-4xl font-bold">
-      We Provide The Best <span class="text-primary">Services</span>
-    </h2>
-    <p class="text-muted-foreground">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-      accusantium voluptatibus aspernatur a quae!
-    </p>
-  </div>
+  <RevealFromBottom client:load delay={0.5}>
+    <div class="text-center space-y-1">
+      <h2 class="text-4xl font-bold">
+        We Provide The Best <span class="text-primary">Services</span>
+      </h2>
+      <p class="text-muted-foreground">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+        accusantium voluptatibus aspernatur a quae!
+      </p>
+    </div>
+  </RevealFromBottom>
 
   <div class="flex flex-wrap gap-4 w-full justify-center">
     {
       services.map((service) => (
-        <ServiceCard
-          title={service.title}
-          description={service.description}
-          bubbleColor={service.bubbleColor}
-        >
-          <service.icon class="text-white absolute left-3 top-3 size-5" />
-        </ServiceCard>
+        <RevealFromBottom client:load delay={service.delay}>
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            bubbleColor={service.bubbleColor}
+          >
+            <service.icon class="text-white absolute left-3 top-3 size-5" />
+          </ServiceCard>
+        </RevealFromBottom>
       ))
     }
   </div>
