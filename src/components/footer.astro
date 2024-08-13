@@ -1,0 +1,124 @@
+---
+import Button from "./button.astro";
+import DiamondIcon from "../icons/diamond.astro";
+import InstagramIcon from "../icons/instagram.astro";
+import FacebookIcon from "../icons/facebook.astro";
+import TwitterIcon from "../icons/twitter.astro";
+
+const columns = [
+  {
+    title: "Company",
+    links: [
+      {
+        title: "About",
+        href: "#",
+      },
+      {
+        title: "Contact",
+        href: "#",
+      },
+      {
+        title: "Category",
+        href: "#",
+      },
+      {
+        title: "Pages",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Designs",
+    links: [
+      {
+        title: "Pricing",
+        href: "#",
+      },
+      {
+        title: "Templates",
+        href: "#",
+      },
+      {
+        title: "Downloads",
+        href: "#",
+      },
+      {
+        title: "FAQ",
+        href: "#",
+      },
+      {
+        title: "More",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        title: "Blog",
+        href: "#",
+      },
+      {
+        title: "About",
+        href: "#",
+      },
+      {
+        title: "Contact",
+        href: "#",
+      },
+    ],
+  },
+];
+---
+
+<footer class="relative">
+  <!-- orange background -->
+  <div class="bg-orange-100 absolute top-0 left-0 w-full h-full -z-10"></div>
+
+  <!-- orange banner -->
+  <div
+    class="bg-primary absolute -top-8 rounded-md shadow-sm shadow-primary left-1/2 -translate-x-1/2 w-2/3 p-4 flex justify-between items-center"
+  >
+    <p class="text-white">Ready to get started?</p>
+    <Button
+      className="bg-transparent border border-white text-white hover:opacity-80"
+      >Contact us</Button
+    >
+  </div>
+
+  <div class="wrapper pt-24 pb-20 flex justify-between items-start">
+    <div class="space-y-2">
+      <div class="flex items-center gap-2">
+        <DiamondIcon class="size-5 text-primary" />
+        <h1 class="font-semibold">Brand name</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <div
+          class="rounded-full p-2 bg-gradient-to-tr from-yellow-300 to-pink-500"
+        >
+          <InstagramIcon class="text-white" />
+        </div>
+
+        <div class="rounded-full p-2 bg-blue-400">
+          <FacebookIcon class="text-white" />
+        </div>
+
+        <div class="rounded-full p-2 bg-cyan-300">
+          <TwitterIcon class="text-white" />
+        </div>
+      </div>
+    </div>
+
+    {
+      columns.map((column) => (
+        <div class="space-y-2">
+          <p class="font-medium text-foreground">{column.title}</p>
+          {column.links.map((link) => (
+            <p class="text-sm text-muted-foreground">{link.title}</p>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</footer>
