@@ -11,11 +11,11 @@ import Button from "./button.astro";
   <div class="bg-orange-100 absolute top-0 left-0 w-full h-full -z-10"></div>
 
   <div class="wrapper py-20 flex gap-20">
-    <RevealFromLeft client:load className="w-1/2 flex justify-center">
+    <RevealFromLeft client:load className="w-1/2 hidden md:flex justify-center">
       <img
         src="/public/illustrations/solutions-illustration.svg"
         alt="Illustration"
-        class="object-contain w-2/3"
+        class="object-contain w-full lg:w-2/3"
       />
     </RevealFromLeft>
 
