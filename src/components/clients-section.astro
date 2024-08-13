@@ -3,7 +3,10 @@ import { RevealFromBottom } from "./animations/reveal-from-bottom";
 import TestimonialsComponent from "./testimonials.astro";
 ---
 
-<section class="wrapper mt-20 mb-32 flex flex-col items-center gap-2">
+<section
+  class="wrapper mt-20 mb-32 flex flex-col items-center gap-2"
+  id="clients"
+>
   <RevealFromBottom client:load className="text-center">
     <Fragment>
       <h2 class="text-4xl font-bold">
