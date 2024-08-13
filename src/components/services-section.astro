@@ -1,42 +1,72 @@
 ---
 import ServiceCard from "./service-card.astro";
+import LoaderPinwheelIcon from "../icons/loader-pinwheel.astro";
+import TabletSmartphoneIcon from "../icons/tablet-smartphone.astro";
+import HeadsetIcon from "../icons/headset.astro";
+import AccesibilityIcon from "../icons/accesibility.astro";
+import BluetoothIcon from "../icons/bluetooth.astro";
 
 const services = [
   {
     title: "Service 1",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
-    bubbleColor: "bg-blue-500",
+    bubbleColor: "bg-purple-500",
+    icon: LoaderPinwheelIcon,
   },
   {
     title: "Service 2",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-red-500",
+    icon: TabletSmartphoneIcon,
   },
   {
     title: "Service 3",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-yellow-500",
+    icon: HeadsetIcon,
   },
   {
     title: "Service 4",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
     bubbleColor: "bg-green-500",
+    icon: AccesibilityIcon,
+  },
+  {
+    title: "Service 5",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam ad excepturi vero illo! Inventore labore eaque enim suscipit, aperiam",
+    bubbleColor: "bg-blue-500",
+    icon: BluetoothIcon,
   },
 ];
 ---
 
-<section class="wrapper my-20 flex justify-around">
-  {
-    services.map((service) => (
-      <ServiceCard
-        title={service.title}
-        description={service.description}
-        bubbleColor={service.bubbleColor}
-      />
-    ))
-  }
+<section class="wrapper my-20 flex flex-col items-center gap-6">
+  <div class="text-center space-y-1">
+    <h2 class="text-4xl font-bold">
+      We Provide The Best <span class="text-primary">Services</span>
+    </h2>
+    <p class="text-muted-foreground">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+      accusantium voluptatibus aspernatur a quae!
+    </p>
+  </div>
+
+  <div class="flex flex-wrap gap-4 w-full justify-center">
+    {
+      services.map((service) => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          bubbleColor={service.bubbleColor}
+        >
+          <service.icon class="text-white absolute left-3 top-3 size-5" />
+        </ServiceCard>
+      ))
+    }
+  </div>
 </section>
