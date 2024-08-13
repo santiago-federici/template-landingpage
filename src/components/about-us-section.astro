@@ -2,8 +2,8 @@
 import Button from "./button.astro";
 ---
 
-<section class="wrapper flex justify-around items-center my-20">
-  <div class="space-y-4 max-w-[40ch]">
+<section class="wrapper flex justify-between items-center my-20">
+  <div class="space-y-4 max-w-[50ch]">
     <h2 class="font-bold text-4xl">
       Our <span class="text-primary">Agency</span>
     </h2>
@@ -17,9 +17,11 @@ import Button from "./button.astro";
     <Button>Read more</Button>
   </div>
 
-  <img
-    src="/public/illustrations/about-us-illustration.svg"
-    alt="illustration"
-    class="w-1/2 aspect-video"
-  />
+  <div class="w-1/2 flex justify-end">
+    <img
+      src="/public/illustrations/about-us-illustration.svg"
+      alt="illustration"
+      class="object-contain w-2/3"
+    />
+  </div>
 </section>
