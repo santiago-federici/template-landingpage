@@ -1,4 +1,7 @@
 ---
+import { RevealFromLeft } from "./animations/reveal-from-left";
+import { RevealFromRight } from "./animations/reveal-from-right";
+
 import TimelineComponent from "./timeline.astro";
 import Button from "./button.astro";
 ---
@@ -8,32 +11,36 @@ import Button from "./button.astro";
   <div class="bg-orange-100 absolute top-0 left-0 w-full h-full -z-10"></div>
 
   <div class="wrapper py-20 flex gap-20">
-    <img
-      src="/public/illustrations/solutions-illustration.svg"
-      alt="Illustration"
-      class="w-1/2 aspect-video"
-    />
+    <RevealFromLeft client:load className="w-1/2 flex justify-center">
+      <img
+        src="/public/illustrations/solutions-illustration.svg"
+        alt="Illustration"
+        class="object-contain w-2/3"
+      />
+    </RevealFromLeft>
 
-    <div class="space-y-10">
-      <div class="space-y-2">
-        <h2 class="text-4xl font-bold">
-          Simple <span class="text-primary">solutions!</span>
-        </h2>
-        <p class="text-muted-foreground">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsa
-          asperiores tempora doloremque, quasi eaque
-        </p>
+    <RevealFromRight client:load>
+      <div class="space-y-10">
+        <div class="space-y-2">
+          <h2 class="text-4xl font-bold">
+            Simple <span class="text-primary">solutions!</span>
+          </h2>
+          <p class="text-muted-foreground">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsa
+            asperiores tempora doloremque, quasi eaque
+          </p>
+        </div>
+
+        <TimelineComponent />
+
+        <div class="space-x-2">
+          <Button>Get started</Button>
+          <Button
+            className="bg-transparent border border-primary text-primary hover:bg-orange-500 hover:text-orange-100"
+            >Read more</Button
+          >
+        </div>
       </div>
-
-      <TimelineComponent />
-
-      <div class="space-x-2">
-        <Button>Get started</Button>
-        <Button
-          className="bg-transparent border border-primary text-primary hover:bg-orange-500 hover:text-orange-100"
-          >Read more</Button
-        >
-      </div>
-    </div>
+    </RevealFromRight>
   </div>
 </section>
