@@ -5,7 +5,10 @@ import { RevealFromRight } from "./animations/reveal-from-right";
 import Button from "./button.astro";
 ---
 
-<section class="wrapper flex justify-between items-center my-20" id="about-us">
+<section
+  class="wrapper flex max-md:flex-col gap-8 justify-between items-center my-20"
+  id="about-us"
+>
   <RevealFromLeft client:load>
     <div class="space-y-4 max-w-[50ch]">
       <h2 class="font-bold text-4xl">
@@ -26,7 +29,7 @@ import Button from "./button.astro";
     <img
       src="/public/illustrations/about-us-illustration.svg"
       alt="illustration"
-      class="object-contain w-2/3"
+      class="object-contain w-full md:w-2/3"
     />
   </RevealFromRight>
 </section>
