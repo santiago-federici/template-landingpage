@@ -70,6 +70,21 @@ const columns = [
     ],
   },
 ];
+
+const socials = [
+  {
+    icon: InstagramIcon,
+    background: "bg-gradient-to-tr from-yellow-300 to-pink-500",
+  },
+  {
+    icon: FacebookIcon,
+    background: "bg-blue-400",
+  },
+  {
+    icon: TwitterIcon,
+    background: "bg-cyan-300",
+  },
+];
 ---
 
 <footer class="relative">
@@ -95,19 +110,15 @@ const columns = [
         <h1 class="font-semibold">Brand name</h1>
       </div>
       <div class="flex items-center gap-2">
-        <div
-          class="rounded-full p-2 bg-gradient-to-tr from-yellow-300 to-pink-500"
-        >
-          <InstagramIcon class="text-white" />
-        </div>
-
-        <div class="rounded-full p-2 bg-blue-400">
-          <FacebookIcon class="text-white" />
-        </div>
-
-        <div class="rounded-full p-2 bg-cyan-300">
-          <TwitterIcon class="text-white" />
-        </div>
+        {
+          socials.map((social) => (
+            <div
+              class={`rounded-full p-2 cursor-pointer hover:opacity-80 duration-200 ${social.background}`}
+            >
+              <social.icon class="text-white" />
+            </div>
+          ))
+        }
       </div>
     </div>
 
@@ -116,7 +127,9 @@ const columns = [
         <div class="space-y-2">
           <p class="font-medium text-foreground">{column.title}</p>
           {column.links.map((link) => (
-            <p class="text-sm text-muted-foreground">{link.title}</p>
+            <p class="text-sm text-muted-foreground hover:underline cursor-pointer hover:text-foreground">
+              {link.title}
+            </p>
           ))}
         </div>
       ))
