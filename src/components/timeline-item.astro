@@ -1,0 +1,26 @@
+---
+import { cn } from "../lib/utils";
+
+interface Props {
+  number: string;
+  title: string;
+  description: string;
+  isLast?: boolean;
+}
+
+const { number, title, description, isLast = false } = Astro.props;
+---
+
+<div class="flex items-center gap-4">
+  <div
+    class="rounded-full bg-orange-500 size-10 grid place-content-center text-lg text-white font-semibold"
+  >
+    {number}
+  </div>
+
+  <div>
+    <p class="text-xl font-medium">{title}</p>
+    <p class="text-muted-foreground text-sm">{description}</p>
+  </div>
+</div>
+<div class={cn("w-px h-6 bg-neutral-400 ml-5", { hidden: isLast })}></div>
