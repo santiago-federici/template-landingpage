@@ -1,42 +1,50 @@
 ---
 import Button from "./button.astro";
 import StarIcon from "../icons/star.astro";
+
+import { RevealFromLeft } from "./animations/reveal-from-left";
+import { RevealFromRight } from "./animations/reveal-from-right";
 ---
 
 <section class="wrapper flex my-20 justify-between items-center">
-  <div class="space-y-2 max-w-[50ch]">
-    <h1 class="text-5xl font-bold">
-      Big title here <span
-        class="bg-gradient-to-r from-black to-orange-600 text-transparent bg-clip-text"
-        >with some color</span
-      >
-    </h1>
-    <p class="text-muted-foreground text-lg">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas culpa quam
-      harum quasi quos dignissimos quidem, molestias distinctio eveniet? Quos
-    </p>
+  <RevealFromLeft client:load>
+    <div class="space-y-2 max-w-[50ch]">
+      <h1 class="text-5xl font-bold">
+        Big title here <span
+          class="bg-gradient-to-r from-black to-orange-600 text-transparent bg-clip-text"
+          >with some color</span
+        >
+      </h1>
+      <p class="text-muted-foreground text-lg">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas culpa
+        quam harum quasi quos dignissimos quidem, molestias distinctio eveniet?
+        Quos
+      </p>
 
-    <div class="space-y-1">
-      <Button className="mt-2">Call to action</Button>
-      <div class="flex items-center gap-2">
-        <!-- Stars container -->
-        <div class="flex gap-1 ml-1">
-          <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
-          <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
-          <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
-          <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
-          <StarIcon class="size-3 stroke-neutral-700" />
+      <div class="space-y-1">
+        <Button className="mt-2">Call to action</Button>
+        <div class="flex items-center gap-2">
+          <!-- Stars container -->
+          <div class="flex gap-1 ml-1">
+            <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
+            <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
+            <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
+            <StarIcon class="size-3 fill-orange-300 stroke-neutral-700" />
+            <StarIcon class="size-3 stroke-neutral-700" />
+          </div>
+          <p class="text-gray-400 text-sm">Based in +5000 ratings</p>
         </div>
-        <p class="text-gray-400 text-sm">Based in +5000 ratings</p>
       </div>
     </div>
-  </div>
+  </RevealFromLeft>
 
-  <div class="w-1/2 flex justify-end">
+  <RevealFromRight client:load className="w-1/2 flex justify-end">
+    <!-- <div class="w-1/2 flex justify-end"> -->
     <img
       src="/public/illustrations/phone-illustration.svg"
       alt="Illustration"
       class="object-contain w-2/3"
     />
-  </div>
+    <!-- </div> -->
+  </RevealFromRight>
 </section>
