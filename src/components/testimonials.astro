@@ -1,0 +1,36 @@
+---
+import TestimonialCard from "./testimonial-card.astro";
+
+const testimonials = [
+  {
+    name: "Santi Federici",
+    email: "santi@gmail.com",
+    testimonial:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, consequatur eveniet. Nostrum deleniti quasi facilis unde, blanditiis sequi, temporibus, similique",
+  },
+  {
+    name: "Santi Federici",
+    email: "santi@gmail.com",
+    testimonial:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, consequatur eveniet. Nostrum deleniti quasi facilis unde, blanditiis sequi, temporibus, similique",
+  },
+  {
+    name: "Santi Federici",
+    email: "santi@gmail.com",
+    testimonial:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, consequatur eveniet. Nostrum deleniti quasi facilis unde, blanditiis sequi, temporibus, similique",
+  },
+];
+---
+
+<div class="flex gap-10">
+  {
+    testimonials.map((testimonial) => (
+      <TestimonialCard
+        name={testimonial.name}
+        email={testimonial.email}
+        testimonial={testimonial.testimonial}
+      />
+    ))
+  }
+</div>
