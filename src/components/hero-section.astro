@@ -3,7 +3,7 @@ import Button from "./button.astro";
 import StarIcon from "../icons/star.astro";
 ---
 
-<section class="wrapper flex my-16 justify-around items-center">
+<section class="wrapper flex my-20 justify-between items-center">
   <div class="space-y-2 max-w-[50ch]">
     <h1 class="text-5xl font-bold">
       Big title here <span
@@ -32,9 +32,11 @@ import StarIcon from "../icons/star.astro";
     </div>
   </div>
 
-  <img
-    src="/public/illustrations/phone-illustration.svg"
-    alt="Illustration"
-    class="w-full aspect-video"
-  />
+  <div class="w-1/2 flex justify-end">
+    <img
+      src="/public/illustrations/phone-illustration.svg"
+      alt="Illustration"
+      class="object-contain w-2/3"
+    />
+  </div>
 </section>
