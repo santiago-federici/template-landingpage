@@ -1,10 +1,12 @@
+"use client";
+
 import { cn } from "../lib/utils";
 
 import { AnimatePresence, motion } from "framer-motion";
 
 import { DiamondIcon } from "../icons/diamond";
 import { MenuIcon } from "../icons/menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CloseIcon } from "../icons/close";
 
 const navLinks = [
