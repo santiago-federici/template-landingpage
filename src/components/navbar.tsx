@@ -65,8 +65,8 @@ export default function Navbar() {
       >
         Sign up
       </button>
-      <span onClick={() => setIsOpen((prev) => !prev)}>
-        <MenuIcon className="md:hidden cursor-pointer" />
+      <span onClick={() => setIsOpen((prev) => !prev)} className="md:hidden">
+        <MenuIcon className="cursor-pointer" />
       </span>
 
       <AnimatePresence>
