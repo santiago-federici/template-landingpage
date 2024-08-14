@@ -9,7 +9,7 @@ import Button from "./button.astro";
   class="wrapper flex max-md:flex-col gap-8 justify-between items-center my-32"
   id="about-us"
 >
-  <RevealFromLeft client:load>
+  <RevealFromLeft client:load delay={0.5}>
     <div class="space-y-4 max-w-[50ch]">
       <h2 class="font-bold text-3xl md:text-4xl">
         Our <span class="text-primary">Agency</span>
@@ -25,7 +25,7 @@ import Button from "./button.astro";
     </div>
   </RevealFromLeft>
 
-  <RevealFromRight client:load className="w-1/2 flex justify-end">
+  <RevealFromRight client:load className="w-1/2 flex justify-end" delay={0.5}>
     <img
       src="/illustrations/about-us-illustration.svg"
       alt="illustration"

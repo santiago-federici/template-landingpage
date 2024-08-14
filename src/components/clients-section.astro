@@ -7,7 +7,7 @@ import TestimonialsComponent from "./testimonials.astro";
   class="wrapper mt-32 mb-40 flex flex-col items-center gap-2"
   id="clients"
 >
-  <RevealFromBottom client:load className="text-center">
+  <RevealFromBottom client:load className="text-center" delay={0.3}>
     <Fragment>
       <h2 class="text-3xl md:text-4xl font-bold">
         What <span class="text-primary">Clients</span> Say!
@@ -21,7 +21,7 @@ import TestimonialsComponent from "./testimonials.astro";
     </Fragment>
   </RevealFromBottom>
 
-  <RevealFromBottom client:load delay={0.3}>
+  <RevealFromBottom client:load delay={0.5}>
     <TestimonialsComponent />
   </RevealFromBottom>
 </section>
